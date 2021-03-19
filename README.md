@@ -2,7 +2,7 @@
 
 Test technique Full Stack
 
-Vous pouvez passer directement à [https://humanize.me/tmp/memory/](la démo) 🍉
+Vous pouvez passer directement à [la juteuse démo](https://humanize.me/tmp/memory/) 🍉
 
 ## Contexte et objectifs
 
@@ -40,7 +40,7 @@ Le code doit être pushé sur un repo public sur GitHub.
 
 ## Exemples
 Les captures d’écran représentent les situations suivantes :
-1. Le plateau de départ ![plateau de départ](assets/brief-exemple-plateau-de-depart.jpg)
-2. Le plateau pendant le jeu ![plateau pendant le jeu](assets/brief-exemple-plateau-pendant-le-jeu.jpg)
-3. On a gagné ! ![on a gagné](assets/brief-exemple-on-a-gagne.jpg)
-4. On a perdu... ![on a perdu](assets/brief-exemple-on-a-perdu.jpg)
+1. Le plateau de départ ![plateau de départ](https://cdn.hmz.tf/brief-exemple-plateau-de-depart.jpg)
+2. Le plateau pendant le jeu ![plateau pendant le jeu](https://cdn.hmz.tf/brief-exemple-plateau-pendant-le-jeu.jpg)
+3. On a gagné ! ![on a gagné](https://cdn.hmz.tf/brief-exemple-on-a-gagne.jpg)
+4. On a perdu... ![on a perdu](https://cdn.hmz.tf/brief-exemple-on-a-perdu.jpg)
