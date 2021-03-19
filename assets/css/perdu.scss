@@ -1,0 +1,20 @@
+/*
+
+PERDU
+
+*/
+
+#perdu {
+  background: $rouge;
+  background-image: radial-gradient(transparent, $noir-opacite-33);
+  color: $blanc;
+
+  .container{
+
+    .titre {
+      text-shadow: 0 0 1rem $noir-opacite-33;
+      margin-bottom: 4rem;
+    }
+
+  }
+}

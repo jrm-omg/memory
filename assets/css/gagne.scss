@@ -1,0 +1,50 @@
+/*
+
+GAGNE
+
+*/
+
+#gagne {
+  background: $vert;
+  background-image: radial-gradient($blanc-opacite-33, transparent);
+  color: $blanc;
+
+  .container{
+
+    .titre {
+      text-shadow: 0 0 1rem $noir-opacite-33;
+    }
+
+    .temps {
+      margin-bottom: 2rem;
+      text-shadow: 0 0 .5rem $noir-opacite-33;
+    }
+
+    form {
+
+      input[type="text"] {
+        text-align: center;
+
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+
+        @include desktop {
+          margin-top: 4rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      input[type="submit"] {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mobile {
+          padding: 1rem;
+        }
+      }
+    }
+
+  }
+}

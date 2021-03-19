@@ -1,0 +1,114 @@
+/*
+
+JEU
+
+*/
+
+#jeu {
+  background: $bleu;
+  background-image: radial-gradient($blanc-opacite-33, transparent);
+  color: $blanc;
+
+  .container{
+    grid-template-rows: 1fr auto;
+    padding: 0;
+
+    @include mobile {
+      padding: 0;
+    }
+
+    @include desktop {
+      max-width: none;
+    }
+
+    .plateau {
+      display: grid;
+      
+      @include mobile {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      @include desktop {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4rem;
+        padding: 4rem;
+      }
+
+      &.desactive {
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .case {
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        border-radius: .5rem;
+        user-select: none;
+        background-color: $blanc-opacite-33;
+
+        .image {
+          background-image: url(../img/cards.png);
+          background-repeat: no-repeat;
+          pointer-events: none;
+          opacity: 0;
+          @include mobile {
+            width: 5rem;
+            height: 5rem;
+            background-size: 100%;
+          }
+          @include desktop() {
+            width: 10rem;
+            height: 10rem;
+            background-size: 100%;
+          }
+        }
+
+        &:hover {
+          background-color: $blanc-opacite-75;
+          box-shadow: 0 0 2rem $blanc-opacite-33;
+        }
+        
+        &.active {
+          background-color: $blanc;
+          box-shadow: 0 0 2rem $blanc-opacite-33;
+          pointer-events: none;
+        }
+
+        &.active .image {
+          opacity: 1;
+        }
+        
+        &.gagne {
+          background-color: $bleu-sombre;
+          pointer-events: none;
+        }
+        
+        &.gagne .image {
+          opacity: 1;
+          mix-blend-mode: color-burn;
+          filter: grayscale(1);
+        }
+
+      }
+
+    }
+    
+    .progress {
+      height: 2rem;
+      background-color: $bleu-sombre;
+
+      .progress-bar {
+        transition: width 0.6s ease;
+        background-color: $blanc;
+        height: 2rem;
+        width: 0%;
+      }
+
+    }
+
+  }
+
+}

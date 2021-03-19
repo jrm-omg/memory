@@ -1,0 +1,15 @@
+/*
+
+FONT FACE
+
+*/
+
+@font-face {
+  font-family: "Bouncy Thin";
+  font-display: swap; // permet d'afficher une police par défaut pendant le chargement de la police de caractère - cf https://css-tricks.com/almanac/properties/f/font-display/
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("https://cdn.hmz.tf/bouncy-thin-webfont.woff2") format("woff2"),
+    url("https://cdn.hmz.tf/bouncy-thin-webfont.woff") format("woff");
+}

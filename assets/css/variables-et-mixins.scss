@@ -1,0 +1,42 @@
+
+// 
+// Variables Sass
+// 
+
+$bleu: #00a1b3;
+$bleu-sombre: #006e7a;
+$rouge: #e74f4f;
+$vert: #70ca57;
+$vert-sombre: #468335;
+$jaune: #ffeb3b;
+$blanc: #fff;
+$blanc-opacite-33: rgba(255, 255, 255, .33);
+$blanc-opacite-50: rgba(255, 255, 255, .50);
+$blanc-opacite-75: rgba(255, 255, 255, .75);
+$noir: #000;
+$noir-opacite-33: rgba(0, 0, 0, .33);
+$noir-opacite-50: rgba(0, 0, 0, .50);
+$noir-opacite-75: rgba(0, 0, 0, .75);
+
+// 
+// Les mixins Sass
+// permettent de créer des groupes de déclarations CSS en vue de les réutiliser plus tard
+// 
+
+@mixin mobile {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin animations-desactivees { // cf https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/
+  @media (prefers-reduced-motion) {
+    @content;
+  }
+}

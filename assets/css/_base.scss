@@ -1,0 +1,183 @@
+/*
+
+BASE
+
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  @include animations-desactivees {
+    animation: none!important;
+    transition: none!important;
+  }
+}
+
+html {
+  font-size: 62.5%; // permet d'avoir une base de 1rem = 10 pixels
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include animations-desactivees {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Ubuntu, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @include mobile {
+      font-size: 2.5rem;
+      line-height: 1.4;
+  }
+  @include desktop {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+}
+
+::selection {
+  background: $jaune;
+  color: $noir;
+  text-shadow: none;
+}
+
+h1, h2, h3 {
+  font-family: "Bouncy Thin";
+  line-height: 1.05;
+}
+
+h1 {
+  @include mobile {
+    font-size: 6rem;
+  }
+  @include desktop {
+    font-size: 12rem;
+  }
+}
+
+h2 {
+  @include mobile {
+    font-size: 3rem;
+  }
+  @include desktop {
+    font-size: 6rem;
+  }
+}
+
+h3 {
+  @include mobile {
+    font-size: 2rem;
+  }
+  @include desktop {
+    font-size: 4rem;
+  }
+}
+
+//
+// base générique
+// pour éléments de formulaire
+//
+
+.btn,
+button,
+input {
+  border: none;
+  display: block;
+  border-radius: .7rem;
+  padding: 2rem;
+  font-size: inherit;
+  width: 100%;
+  outline: none;
+
+  &::placeholder{
+    color: currentColor;
+    opacity: .85;
+  }
+
+}
+
+//
+// boutons
+//
+
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  color: $noir-opacite-75;
+  background-color: $jaune;
+  box-shadow: 0 0 0 .5rem $noir-opacite-50,
+              0 .5rem 2rem $noir-opacite-75;
+  transition: transform 200ms,
+              box-shadow 200ms;
+  &:hover {
+    box-shadow: 0 0 0 .5rem $noir-opacite-75,
+                0 .5rem 2rem $noir-opacite-75;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 .5rem $noir-opacite-50,
+                0 0 2rem $noir-opacite-50;
+    transform: translateY(.1rem);
+  }
+
+}
+
+//
+// champs de saisie
+// 
+
+input[type="text"] {
+  color: $blanc;
+  box-shadow: inset 0 0 1rem $noir-opacite-75;
+  background-color: $noir-opacite-33;
+  transition: background-color 300ms;
+
+  &:focus {
+    background-color: $noir-opacite-50;
+  }
+
+}
+
+// navigation :
+// notre petite astuce
+// pour créer l'illusion d'avoir plusieurs pages
+
+article {
+  display: none; // par défaut les éléments article sont cachés
+  min-height: 100vh;
+
+  &:target {
+    display: block; // sauf s'ils sont ciblés - cf https://developer.mozilla.org/fr/docs/Web/CSS/:target
+  }
+
+  // 
+  // canevas de base
+  // 
+
+  .container {
+    display: grid;
+    min-height: 100vh;
+    align-content: center;
+    text-align: center;
+
+    @include mobile {
+      padding: 2rem;
+    }
+
+    @include desktop {
+      max-width: 70rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
