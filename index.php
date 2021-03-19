@@ -41,7 +41,15 @@
           <ol class="temps">
           <?php
             foreach ($meilleursTemps as $entree) {
-              echo "<li>" . $entree['p_temps'] . "s <em>•</em> " . $entree['p_pseudo'] . "</li>";
+
+              // chaque donnée provenant de la BDD est d'abord nettoyée
+              // grâce à la fonction htmlentities
+              // de manière à protéger contre les failles de type XSS - cf https://owasp.org/www-community/attacks/xss/
+
+              $joueurTemps = htmlentities($entree['p_temps'], ENT_QUOTES);
+              $joueurPseudo = htmlentities($entree['p_pseudo'], ENT_QUOTES);
+
+              echo "<li>" . $joueurTemps . "s <em>•</em> " . $joueurPseudo . "</li>";
             }
           ?>
           </ol>
